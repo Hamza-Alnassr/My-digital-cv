@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamza Luai Alnassr - Software Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #666666;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+
+        /* Header styles */
+        header {
+            background: linear-gradient(to right, #450808, #8F0D0D);
+            color: white;
+            padding: 2rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .header-text {
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .header-text {
+                margin-right: 2rem;
+                margin-bottom: 0;
+            }
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-text h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .header-text p {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .profile-photo {
+            width: 128px;
+            height: 128px;
+            border-radius: 50%;
+            border: 4px solid #E7D192;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Main content styles */
+        .main-content {
+            padding: 2rem 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #450808;
+            border-bottom: 2px solid #E7D192;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-weight: bold;
+            color: #8F0D0D;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-subtitle {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-meta {
+            font-size: 0.875rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-content {
+            margin-top: 0.5rem;
+        }
+
+        .card-content ul {
+            list-style-type: disc;
+            margin-left: 1rem;
+        }
+
+        .card-content li {
+            margin-bottom: 0.25rem;
+        }
+
+        /* Quote styles */
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid #8F0D0D;
+            padding-left: 1rem;
+            margin: 1rem 0;
+        }
+
+        /* Achievement styles */
+        .achievement {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .achievement-icon {
+            color: #8F0D0D;
+            flex-shrink: 0;
+        }
+
+        /* Tags styles */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background-color: #8F0D0D;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Language skills */
+        .language-skill {
+            margin-bottom: 1rem;
+        }
+
+        .language-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+        }
+
+        .language-name {
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            height: 0.5rem;
+            background-color: #e5e7eb;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .progress-value {
+            height: 100%;
+            background-color: #8F0D0D;
+        }
+
+        /* Day of life chart */
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+        .pie-chart {
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+
+        .pie-chart-legend {
+            margin-top: 1rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            margin-right: 0.5rem;
+            border-radius: 2px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #450808;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.875rem;
+        }
+
+        /* Courses grid */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .courses-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .course-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .course-number {
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Hamza Luai Alnassr</h1>
+                    <h2>Software Engineer</h2>
+                    <p>Student at the University of Sharjah Bachelor's degree in Computer Science.</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:haalnassr@gmail.com">haalnassr@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>056-892-3011</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Dubai, UAE</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/hamza-alnassr-3b55ab358" target="_blank">hamza-alnassr</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-photo">
+                    <img src="https://via.placeholder.com/128" alt="Hamza Luai Alnassr">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="grid">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <section class="section">
+                        <h2 class="section-title">ABOUT ME</h2>
+                        <ul>
+                            <li>Nationality: Jordanian</li>
+                            <li>Date of Birth: 11/03/2005 (Age 20)</li>
+                            <li>Location: Dubai, United Arab Emirates</li>
+                            <li>Marital Status: Single</li>
+                            <li>Visa Status: Self Sponsor (Exp. 2033)</li>
+                            <li>Driving License and Car: Available</li>
+                        </ul>
+                    </section>
+
+                    <section class="section">
+                        <h2 class="section-title">EXPERIENCE AND POSITIONS</h2>
+                        <div class="card">
+                            <h3 class="card-title">Research Assistant</h3>
+                            <div class="card-subtitle">University of Sharjah</div>
+                            <div class="card-meta">Sep 2024 - Ongoing | Sharjah</div>
+                            <div class="card-content">
+                                <ul>
+                                    <li>OpenUAE Research and Development about GIS and remote sensing as Research Assistant</li>
+                                    <li>Programming based with Python and JavaScript for Earth observations and visualizations</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3 class="card-title">Tutor of Programming in C++</h3>
+                            <div class="card-subtitle">University of Sharjah</div>
+                            <div class="card-meta">April 2024 - May 2024 | Sharjah</div>
+                            <div class="card-content">
+                                <ul>
+                                    <li>Worked in Tutoring (UG) students of my university in programming 1 course (C++ oriented)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section">
+                        <h2 class="section-title">PROJECTS</h2>
+                        <div class="card">
+                            <h3 class="card-title">Real Life Applications Project</h3>
+                            <div class="card-subtitle">University Courses Projects</div>
+                            <div class="card-content">
+                                <ul>
+                                    <li>Machine Learning Project in identifying cats and dogs from images</li>
+                                    <li>PDF to Quiz Generator Website with basic Backend but mainly Front End</li>
+                                    <li>Property Transactions App UI plus some BlockChain Technology using the Software development services, including app design, architecture, and implementation using structured software engineering methodologies such as the Waterfall model.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3 class="card-title">Capstone Project</h3>
+                            <div class="card-subtitle">University Graduation</div>
+                            <div class="card-content">
+                                <ul>
+                                    <li>Stroke prediction platform using a hybrid model of CNN, XGBoost, and Random Forest, leveraging health data to maximize accuracy. Future plans include real-time monitoring via smartwatches and MongoDB integration.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3 class="card-title">GIS and Remote Sensing Research Projects</h3>
+                            <div class="card-subtitle">Research Assistant</div>
+                            <div class="card-content">
+                                <ul>
+                                    <li>Automating spatial analysis for Sharjah using Python</li>
+                                    <li>Flood risk mapping project for Sharjah using ArcGIS and Python</li>
+                                    <li>Getting the elevation and DEM for an image</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section">
+                        <h2 class="section-title">A DAY OF MY LIFE</h2>
+                        <div class="chart-container">
+                            <div>
+                                <div class="pie-chart">
+                                    <!-- Simple representation of pie chart -->
+                                    <img src="https://quickchart.io/chart?c={type:'pie',data:{labels:['Sleep, beautiful sleep','Hopeful novelist by night','Daytime job and Studying','Sports and relaxation','Spending time with family'],datasets:[{data:[6,3,8,2,5],backgroundColor:['rgba(143,13,13,0.3)','rgba(143,13,13,0.4)','rgba(143,13,13,0.6)','rgba(143,13,13,1)','rgba(143,13,13,0.2)']}]}}" alt="A Day of My Life Chart" width="300" height="300">
+                                </div>
+                                <div class="pie-chart-legend">
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: rgba(143,13,13,0.3);"></div>
+                                        <span>Sleep, beautiful sleep (6 hours)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: rgba(143,13,13,0.4);"></div>
+                                        <span>Hopeful novelist by night (3 hours)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: rgba(143,13,13,0.6);"></div>
+                                        <span>Daytime job and Studying (8 hours)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: rgba(143,13,13,1);"></div>
+                                        <span>Sports and relaxation (2 hours)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background-color: rgba(143,13,13,0.2);"></div>
+                                        <span>Spending time with family (5 hours)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section">
+                        <h2 class="section-title">COURSES TAKEN</h2>
+                        <div class="courses-grid">
+                            <div class="course-item">
+                                <span class="course-number">1.</span>
+                                <span>Programming With C++ OOP</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-number">2.</span>
+                                <span>Programming With Java OOP</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-number">3.</span>
+                                <span>Data Structures</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-number">4.</span>
+                                <span>Python language</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-number">5.</span>
+                                <span>Machine learning (theory)</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-number">6.</span>
+                                <span>Artificial intelligence</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-number">7.</span>
+                                <span>Networking</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-number">8.</span>
+                                <span>Automata theory (compiler machines and Parsers)</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-number">9.</span>
+                                <span>Software Engineering</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-number">10.</span>
+                                <span>Design and analysis of algorithms</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-number">11.</span>
+                                <span>Calculus 1 and Calculus 2</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-number">12.</span>
+                                <span>Digital Login design (theory and Lab)</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-number">13.</span>
+                                <span>Probability And Statistics</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-number">14.</span>
+                                <span>Assembly lang and microprocessor</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-number">15.</span>
+                                <span>Linear Algebra</span>
+                            </div>
+                            <div class="course-item">
+                                <span class="course-number">16.</span>
+                                <span>Database-Mang-Sys</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column -->
+                <div class="right-column">
+                    <section class="section">
+                        <h2 class="section-title">MY LIFE PHILOSOPHY</h2>
+                        <blockquote>
+                            "Code smart, Lift heavy, earn wisely—respect time, build discipline, and grow stronger every single day.."
+                        </blockquote>
+                    </section>
+
+                    <section class="section">
+                        <h2 class="section-title">MOST PROUD OF</h2>
+                        <div class="card">
+                            <div class="achievement">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div>
+                                    <h3 class="card-title">Fantastic Achievement</h3>
+                                    <p>Working with GIS platforms and engines with Python</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="achievement">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div>
+                                    <h3 class="card-title">Another achievement</h3>
+                                    <p>Applied Software engineering methodologies to build app from zero</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section">
+                        <h2 class="section-title">STRENGTHS</h2>
+                        <div class="tags">
+                            <span class="tag">Git & GitHub</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">NON-Relational-DB-Monjo</span>
+                            <span class="tag">Pycharm</span>
+                            <span class="tag">Google-Collab</span>
+                            <span class="tag">VS-Code</span>
+                            <span class="tag">GEE & ArcGis-pro & SuperMap Gis & Anaconda</span>
+                            <span class="tag">Motivator & Leader & Time Management</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Java OOP</span>
+                            <span class="tag">Java-FX</span>
+                            <span class="tag">BlockChain</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">scikit learn</span>
+                            <span class="tag">panda</span>
+                            <span class="tag">ArcPy</span>
+                        </div>
+                    </section>
+
+                    <section class="section">
+                        <h2 class="section-title">LANGUAGES</h2>
+                        <div class="language-skill">
+                            <div class="language-header">
+                                <span class="language-name">English</span>
+                                <span>5/5</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 100%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="language-skill">
+                            <div class="language-header">
+                                <span class="language-name">Arabic</span>
+                                <span>5/5</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-value" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section">
+                        <h2 class="section-title">EDUCATION</h2>
+                        <div class="card">
+                            <h3 class="card-title">B.Sc. Computer Science - CGPA 3.86</h3>
+                            <div class="card-subtitle">University of Sharjah</div>
+                            <div class="card-meta">Sept 2022 - Expected to Graduate June 2026</div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© <script>document.write(new Date().getFullYear())</script> Hamza Luai Alnassr - Software Engineer</p>
+        </div>
+    </footer>
+</body>
+</html>
